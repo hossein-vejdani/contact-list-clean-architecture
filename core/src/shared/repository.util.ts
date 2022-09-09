@@ -39,10 +39,10 @@ export type SingleItemResponseType<T> = {
     items: T[]
 }
 
-export interface IRepository<T, Key extends keyof T> {
+export interface IBaseRepository<T, Key extends keyof T> {
     // query
     getAll(queryParams: QueryParamType<T>): Promise<ListResponseType<T>>
-    get(key: Key): Promise<SingleItemResponseType<T>>
+    getOne(key: T[Key]): Promise<SingleItemResponseType<T>>
 
     // command
     create(data: Omit<T, Key>): Promise<SingleItemResponseType<T>>

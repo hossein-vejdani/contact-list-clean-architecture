@@ -1,0 +1,10 @@
+{
+  "name": "contact-management",
+  "version": "1.0.0",
+  "repository": "https://github.com/hossein-vejdani/snapp-assignment.git",
+  "author": "Seyyed Hossein Vejdani",
+  "license": "MIT",
+  "scripts": {
+    "g:links": "cd core && yarn link && cd ../views && yarn link @contact-management/core"
+  }
+}

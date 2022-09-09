@@ -1,7 +1,7 @@
-import { ListResponseType, SingleItemResponseType } from './RepositoryUtil'
+import { ListResponseType, SingleItemResponseType } from './repository.util'
 
 interface IBasePresenter {
-    notifyError()
+    notifyError(err: any)
 }
 
 export interface IListPresenter<T> extends IBasePresenter {
