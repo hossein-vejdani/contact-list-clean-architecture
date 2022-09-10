@@ -1,0 +1,11 @@
+{
+  "name": "@contact-management/infra",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "inversify": "^6.0.1",
+    "reflect-metadata": "^0.1.13"
+  }
+}
