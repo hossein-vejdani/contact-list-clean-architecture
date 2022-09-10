@@ -7,7 +7,13 @@ import { inject, injectable } from 'inversify'
 
 @injectable()
 export class GetAllPassengersService implements IService<IPassengerRepository, IGetAllPassengersPresenter, Passenger, 'id'> {
-    constructor(@inject(PASSENGER_REPOSITORY_TYPE) readonly repository: IPassengerRepository, @inject(PASSENGER_GET_ALL_PRESENTER_TYPE) readonly presenter: IGetAllPassengersPresenter) {}
+    @inject(PASSENGER_REPOSITORY_TYPE) readonly repository: IPassengerRepository
+
+    presenter: IGetAllPassengersPresenter
+
+    constructor(presenter: IGetAllPassengersPresenter) {
+        this.presenter = presenter
+    }
 
     async execute(queryParams: QueryParamType<Passenger>) {
         try {
@@ -19,8 +25,15 @@ export class GetAllPassengersService implements IService<IPassengerRepository, I
     }
 }
 
-export class GetOnePassengerService implements IService<IPassengerRepository, IGetAllPassengersPresenter, Passenger, 'id'> {
-    constructor(@inject(PASSENGER_REPOSITORY_TYPE) readonly repository: IPassengerRepository, @inject(PASSENGER_GET_ONE_PRESENTER_TYPE) readonly presenter: IGetOnePassengerPresenter) {}
+@injectable()
+export class GetOnePassengerService implements IService<IPassengerRepository, IGetOnePassengerPresenter, Passenger, 'id'> {
+    @inject(PASSENGER_REPOSITORY_TYPE) readonly repository: IPassengerRepository
+
+    presenter: IGetOnePassengerPresenter
+
+    constructor(presenter: IGetOnePassengerPresenter) {
+        this.presenter = presenter
+    }
 
     async execute({ id }: Pick<Passenger, 'id'>) {
         try {

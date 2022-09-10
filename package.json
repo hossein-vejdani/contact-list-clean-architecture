@@ -5,6 +5,6 @@
   "author": "Seyyed Hossein Vejdani",
   "license": "MIT",
   "scripts": {
-    "g:links": "cd core && yarn link && cd ../views && yarn link @contact-management/core"
+    "g:links": "cd core && yarn link && cd ../infrastructure && yarn link @contact-management/core && cd ../views && yarn link @contact-management/core"
   }
 }

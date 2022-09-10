@@ -30,13 +30,7 @@ export type ListResponseType<T> = {
 }
 
 export type SingleItemResponseType<T> = {
-    meta: {
-        skipped: number
-        limit: number
-        total: number
-        criteria: SearchType<T>
-    }
-    items: T[]
+    [K in keyof T]: T[K]
 }
 
 export interface IBaseRepository<T, Key extends keyof T> {
