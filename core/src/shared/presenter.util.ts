@@ -1,17 +1,17 @@
 import { ListResponseType, SingleItemResponseType } from './repository.util'
 
 interface IBasePresenter {
-    notifyError(err: any)
+    notifyError(err: any): void
 }
 
 export interface IListPresenter<T> extends IBasePresenter {
-    notifySuccess(data: ListResponseType<T>)
+    notifySuccess(data: ListResponseType<T>): void
 }
 
 export interface ISingleItemPresenter<T> extends IBasePresenter {
-    notifySuccess(data: SingleItemResponseType<T>)
+    notifySuccess(data: SingleItemResponseType<T>): void
 }
 
-export interface IVoidPresenter<T> extends IBasePresenter {
-    notifySuccess()
+export interface IVoidPresenter extends IBasePresenter {
+    notifySuccess(): void
 }

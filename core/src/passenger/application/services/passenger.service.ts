@@ -1,17 +1,17 @@
 import { QueryParamType } from '../../../shared/repository.util'
 import { IService } from '../../../shared/service.util'
 import { Passenger } from '../../domains/passenger.model'
-import { IGetAllPassengersPresenter, IGetOnePassengerPresenter, PASSENGER_GET_ALL_PRESENTER_TYPE, PASSENGER_GET_ONE_PRESENTER_TYPE } from '../presenters/passenger.presenter'
-import { IPassengerRepository, PASSENGER_REPOSITORY_TYPE } from '../repositories/passenger.repository'
-import { inject, injectable } from 'inversify'
+import type { IGetAllPassengersPresenter, IGetOnePassengerPresenter } from '../presenters/passenger.presenter'
+import { type IPassengerRepository, PASSENGER_REPOSITORY_TYPE } from '../repositories/passenger.repository'
+import { DIContainer } from '../../../container'
 
-@injectable()
-export class GetAllPassengersService implements IService<IPassengerRepository, IGetAllPassengersPresenter, Passenger, 'id'> {
-    @inject(PASSENGER_REPOSITORY_TYPE) readonly repository: IPassengerRepository
+export class GetAllPassengersService implements IService {
+    private repository: IPassengerRepository
 
     presenter: IGetAllPassengersPresenter
 
     constructor(presenter: IGetAllPassengersPresenter) {
+        this.repository = DIContainer.getInstance().get(PASSENGER_REPOSITORY_TYPE)
         this.presenter = presenter
     }
 
@@ -20,18 +20,20 @@ export class GetAllPassengersService implements IService<IPassengerRepository, I
             const result = await this.repository.getAll(queryParams)
             this.presenter.notifySuccess(result)
         } catch (err) {
+            console.log(this.repository)
+
             this.presenter.notifyError(err)
         }
     }
 }
 
-@injectable()
-export class GetOnePassengerService implements IService<IPassengerRepository, IGetOnePassengerPresenter, Passenger, 'id'> {
-    @inject(PASSENGER_REPOSITORY_TYPE) readonly repository: IPassengerRepository
+export class GetOnePassengerService implements IService {
+    private repository: IPassengerRepository
 
-    presenter: IGetOnePassengerPresenter
+    private readonly presenter: IGetOnePassengerPresenter
 
     constructor(presenter: IGetOnePassengerPresenter) {
+        this.repository = DIContainer.getInstance().get(PASSENGER_REPOSITORY_TYPE)
         this.presenter = presenter
     }
 
