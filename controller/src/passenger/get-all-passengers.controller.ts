@@ -1,6 +1,5 @@
 import { GetAllPassengersService } from '@contact-management/core'
 import { GetAllPassengersPresenter } from '@contact-management/infra'
-console.log('hello')
 
 export class GetAllPassengersController {
     service: GetAllPassengersService
