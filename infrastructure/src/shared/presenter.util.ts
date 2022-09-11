@@ -8,8 +8,6 @@ export class Presenter<T> {
     }
 
     protected notify(data?: T, error?: any): void {
-        console.log(this.subscribers)
-
         for (const [_, subscriber] of this.subscribers) {
             subscriber(data, error)
         }
