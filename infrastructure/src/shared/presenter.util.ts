@@ -1,3 +1,5 @@
+import type { IGlobalHTTPErrorPresenter } from '@contact-management/core'
+
 export type Subscriber<T> = (result?: T, error?: unknown) => void
 
 export class Presenter<T> {
@@ -21,5 +23,11 @@ export class Presenter<T> {
 
     public unsubscribe(key: symbol): void {
         this.subscribers.delete(key)
+    }
+}
+
+export class GlobalHTTPErrorPresenter extends Presenter<unknown> implements IGlobalHTTPErrorPresenter {
+    notifyError(err: unknown) {
+        this.notify(err)
     }
 }
