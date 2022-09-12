@@ -1,0 +1,18 @@
+.base-pagination {
+    &__button {
+        all: unset;
+        border: 0.2rem solid #ccc;
+        margin: 0 0.2rem;
+        color: #333;
+        border-radius: 50%;
+        text-align: center;
+        width: 3.5rem;
+        height: 3.5rem;
+        cursor: pointer;
+
+        &--active {
+            color: #f9f9f9;
+            background-color: var(--primary-color);
+        }
+    }
+}
