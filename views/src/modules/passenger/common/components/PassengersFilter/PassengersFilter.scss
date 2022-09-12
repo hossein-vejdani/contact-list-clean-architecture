@@ -1,0 +1,11 @@
+.passengers-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    &__field {
+        font-size: 1.8rem;
+        padding: 0.3rem;
+        margin-top: 0.3rem;
+    }
+}

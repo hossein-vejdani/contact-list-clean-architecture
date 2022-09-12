@@ -1,0 +1,99 @@
+.passenger-card {
+    $skew: 20deg;
+    background: white;
+    box-shadow: 0 0.2rem 0.6rem 0.1rem rgba(0, 0, 0, 0.15);
+    margin-top: 1.5rem;
+    transform: skewX(-$skew);
+    display: flex;
+    transition: all 0.5s;
+    width: 100%;
+    max-height: 5rem;
+    height: 8rem;
+    will-change: transform;
+    &:hover {
+        transform: skewX(-$skew) scale(1.02);
+        box-shadow: 0 0.3rem 0.8rem 0.2rem rgba(0, 0, 0, 0.15);
+    }
+
+    &__avatar {
+        transform: skewX($skew);
+        width: 7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 15rem;
+        &-image {
+            height: 5rem;
+        }
+    }
+
+    &__fullname-box {
+        background: var(--primary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8rem;
+        width: 20%;
+    }
+
+    &__fullname {
+        color: white;
+        font-size: 2.25rem;
+        transform: skewX($skew);
+    }
+
+    &__details {
+        width: 50%;
+        flex-shrink: 0;
+        display: flex;
+        flex-grow: 1;
+    }
+
+    &__detail-box {
+        border-right: 0.1rem solid #ddd;
+        display: flex;
+        align-items: center;
+
+        &:last-child {
+            border: none;
+        }
+    }
+
+    &__detail {
+        max-width: 50ch;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 1.8rem;
+        transform: skewX($skew);
+        padding: 1.75rem;
+        white-space: nowrap;
+    }
+
+    &__link {
+        width: 8%;
+        &:link,
+        &:visited {
+            flex: 0 0 auto;
+            background-color: var(--primary-color);
+            opacity: 0.8;
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 1.5rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        &:hover {
+            opacity: 1;
+        }
+
+        span {
+            transform: skewX($skew);
+        }
+    }
+}
