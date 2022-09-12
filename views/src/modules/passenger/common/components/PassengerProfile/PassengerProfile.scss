@@ -1,0 +1,27 @@
+.passenger-profile {
+    box-shadow: 0 0.2rem 0.6rem 0.1rem rgba(0, 0, 0, 0.15);
+    border-radius: 1rem;
+    min-width: 95%;
+    max-width: 60rem;
+    &__avatar {
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        &-image {
+            height: 30rem;
+        }
+    }
+    &__title {
+        background-color: var(--primary-color);
+        padding: 2rem;
+        color: #f9f9f9;
+        font-weight: bold;
+        text-align: center;
+        font-size: 2.3rem;
+    }
+
+    &__details {
+        padding: 0 2rem 2rem;
+        font-size: 1.8rem;
+    }
+}
