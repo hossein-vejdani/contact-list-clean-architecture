@@ -46,6 +46,7 @@ module.exports = {
     rules: {
         'prefer-promise-reject-errors': 'off',
         // TypeScript
+        '@typescript-eslint/no-unsafe-assignment': 'off',
         '@typescript-eslint/no-floating-promises': 'off',
         '@typescript-eslint/no-unsafe-return': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
@@ -53,7 +54,10 @@ module.exports = {
         '@typescript-eslint/ban-ts-comment': 'off',
         '@typescript-eslint/no-var-requires': 'off',
         '@typescript-eslint/no-misused-promises': 'off',
+        '@typescript-eslint/no-unsafe-call': 'off',
         '@typescript-eslint/unbound-method': 'off',
+        '@typescript-eslint/no-unsafe-member-access': 'off',
+        '@typescript-eslint/no-unsafe-argument': 'off',
         quotes: ['warn', 'single', { avoidEscape: true }],
         '@typescript-eslint/explicit-function-return-type': 'off',
 
