@@ -15,6 +15,5 @@ function changeLine(props) {
 
 changeLine({
     path: 'node_modules/react-scripts/config/webpack.config.js',
-    lineToRemove: { index: 418, value: 'include: paths.appSrc,' },
-    replace: "include: path.join(paths.appPath, '..'),"
+    lineToRemove: { index: 418, value: 'include: paths.appSrc,' }
 })
