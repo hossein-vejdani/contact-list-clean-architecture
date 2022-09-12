@@ -1,4 +1,4 @@
-[![snapp!](https://i.ibb.co/mCFVnwb/snapppng.png)](https://i.ibb.co/mCFVnwb/snapppng.png)
+[![snapp!](https://i.ibb.co/0sFWsNP/Untitled-1-copy.png)](https://i.ibb.co/0sFWsNP/Untitled-1-copy.png)
 ## Installation
 
 using yarn:
