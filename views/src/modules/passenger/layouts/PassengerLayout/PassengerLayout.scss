@@ -1,0 +1,8 @@
+.passenger-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__title {
+        color: var(--primary-color);
+    }
+}
