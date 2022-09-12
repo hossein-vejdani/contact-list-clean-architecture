@@ -1,0 +1,17 @@
+.passenger-list {
+    width: 80%;
+    min-width: 30rem;
+    &__last-seen {
+        margin-bottom: 3rem;
+        padding-bottom: 3rem;
+        border-bottom: 0.1rem solid #ccc;
+    }
+    &__passengers {
+        text-align: center;
+    }
+    &__footer {
+        margin-top: 2.5rem;
+        display: flex;
+        justify-content: center;
+    }
+}
