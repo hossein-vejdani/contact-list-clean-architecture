@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn g:links && cd views && yarn start",
-    "packages": "cd core && yarn && cd ../infrastructure && yarn && cd ../controller && yarn && cd views && yarn",
+    "packages": "cd core && yarn && cd ../infrastructure && yarn && cd ../controller && yarn && cd ../views && yarn",
     "g:links": "cd core && yarn link && cd ../infrastructure && yarn link @contact-management/core && yarn link && cd ../controller && yarn link @contact-management/core && yarn link @contact-management/infra && yarn link && cd ../views && yarn link @contact-management/core && yarn link @contact-management/controller"
   },
   "dependencies": {}
