@@ -1,7 +1,7 @@
 import { ListResponseType, SingleItemResponseType } from './repository.util'
 
-interface IBasePresenter {
-    notifyError(err: any): void
+export interface IBasePresenter {
+    notifyError(err: unknown): void
 }
 
 export interface IListPresenter<T> extends IBasePresenter {
@@ -14,4 +14,8 @@ export interface ISingleItemPresenter<T> extends IBasePresenter {
 
 export interface IVoidPresenter extends IBasePresenter {
     notifySuccess(): void
+}
+
+export interface IGlobalHTTPErrorPresenter {
+    notifyError(err: unknown): void
 }
