@@ -6,7 +6,7 @@
       "dom.iterable",
       "esnext"
     ],
-    "types": ["reflect-metadata"],
+    "types": ["reflect-metadata", "webpack-env"],
     "skipLibCheck": false,
     "allowJs": true,
     "listFiles": true,
