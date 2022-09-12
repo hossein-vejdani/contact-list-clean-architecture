@@ -21,10 +21,10 @@ export type QueryParamType<T> = {
 
 export type ListResponseType<T> = {
     meta: {
-        skipped: number
-        limit: number
-        total: number
-        criteria: SearchType<T>
+        skipped?: number
+        limit?: number
+        total?: number
+        criteria?: SearchType<T>
     }
     items: T[]
 }
